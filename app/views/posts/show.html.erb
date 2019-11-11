@@ -1,0 +1,15 @@
+<h1>title: <%= @post.title %></h1>
+<p>author: <%= @user.screen_name %></p>
+<p>content: <%= @post.content %></p>
+<hr>
+<h2>comments</h2>
+<% @post.comment.each do |c| %>
+  <p><%= c.content %></p>
+  <p>author: <%= c.user.screen_name %></p>
+  <br>
+<% end %>
+<p><a href="/posts" class="btn btn-info">back to index</a></p>
+<% if user_signed_in? && @post.user_id == current_user.id %>
+  <p><a href="/posts/<%= @post.id %>/edit" class="btn btn-primary">edit post</a></p>
+  <p><a href="/posts/<%= @post.id %>" data-method="delete" class="btn btn-danger">destroy post</a></p>
+<% end %>

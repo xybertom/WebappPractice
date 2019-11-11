@@ -1,0 +1,7 @@
+<h1>index</h1>
+<br>
+<% @posts.each do |p| %>
+  <p>title: <a href="/posts/<%= p.id %>"><%= p.title %></a></p>
+  <br>
+<% end %>
+<a href="posts/new" class="btn btn-primary">create new post</a>

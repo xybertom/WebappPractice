@@ -1,0 +1,12 @@
+<h1>edit user information</h1>
+<hr>
+<%= form_for @user do |f| %>
+  <p>screen name</p>
+  <%= f.text_field :screen_name, :class => "form-control my-form" %>
+  <p>self introduction</p>
+  <%= f.text_area :self_introduction, :class => "form-control my-form" %>
+  <hr>
+  <%= f.submit "submit", :class => "btn btn-primary" %>
+<% end %>
+<hr>
+<a href="/users/<%= @user.id %>" class="btn btn-info">back to user information</a>

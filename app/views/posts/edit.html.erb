@@ -1,0 +1,11 @@
+<h1>edit post</h1>
+<%= form_for @post do |f| %>
+  <p>title:</p>
+  <%= f.text_field :title, class: "form-control my-form" %>
+  <p>content:</p>
+  <%= f.text_area :content, class: "form-control my-form" %>
+  <br>
+  <%= f.submit "submit", class: "btn btn-primary"%>
+<% end %>
+<br>
+<a href="/posts/<%= @post.id %>" class="btn btn-info">back to post</a>
